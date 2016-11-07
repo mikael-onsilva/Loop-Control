@@ -1,0 +1,424 @@
+﻿@charset "UTF-8";
+/*BACKGROUND*/
+body {
+	background: url("../images/fundo-pequeno.jpg") no-repeat fixed;
+	overflow: hidden;
+	margin:0px;
+}
+/* ---------- TELA INICIAL ---------- */
+.menu-inicial-box {
+	
+}
+/*POSICIONAMENTO ICONES TELA INICIAL*/
+.novo {
+	position: absolute;
+	top: 120px;
+	left: 48px;
+	color: white;
+	width: 100px;
+	height: 100px;
+	margin: 0px;
+	
+}
+.playlist {
+	position: absolute;
+	top: 120px;
+	left: 196px;
+	color: white;
+	width: 100px;
+	height: 100px;
+	margin: 0px;
+}
+.abrir {
+	position: absolute;
+	top: 120px;
+	left: 344px;
+	color: white;
+	width: 100px;
+	height: 100px;
+	margin: 0px;
+}
+.sair {
+	position: absolute;
+	top: 120px;
+	left: 492px;
+	color: white;
+	width: 100px;
+	height: 100px;
+	margin: 0px;
+}
+.legenda {
+	text-align: center;
+	font-family: century gothic, sans-serif;
+	font-size: 12pt;
+	text-shadow: 2px 2px black;
+}
+
+
+
+
+/* ---------- TELA PROJETO ---------- */
+.projeto-box {
+}
+/* CABEÇALHO */
+.cabecalho-box {
+	height: 50px;
+	width: 640px;
+	margin: 0px;
+	padding: 0px;
+	background-color: rgba(0,0,0,.8);
+	background-attachment: fixed;
+	box-sizing: border-box;
+	}
+	.titulo-musica-palco, .titulo-musica-projeto {
+		background-color: transparent;
+		position: fixed;
+		top: 0px;
+		left: 125px;
+		margin: 0px;
+		box-sizing: border-box;
+		height: 50px;
+		width: 390px;
+		border: none;
+		text-transform: uppercase;
+		color: white;
+		padding: 5px 5px 5px 5px;
+		font-size: 22pt;
+		font-family: century gothic, sans-serif;
+		text-align: center;
+		z-index: 1;
+		}
+	.icone-esq1 {
+		position: fixed;
+		top: 5px;
+		left: 5px;]
+		height: 40px;
+		width: 40px;
+		z-index: 2;
+		}
+	.icone-esq2 {
+		position: fixed;
+		top: 5px;
+		left: 65px;
+		height: 40px;
+		width: 40px;
+		z-index: 2;
+		}
+	.icone-dir1 {
+		position: fixed;
+		top: 5px;
+		left: 535px;
+		height: 40px;
+		width: 40px;
+		z-index: 2;
+		}
+	.icone-dir2 {
+		position: fixed;
+		top: 5px;
+		left: 595px;
+		height: 40px;
+		width: 40px;
+		z-index: 2;
+		}
+
+/* POSICIONAMENTO PARTES TELA PROJETO */
+.botoes-box {
+	position: absolute;
+	box-sizing: border-box;
+	top: 55px;
+	left: 5px;
+	background-color: rgba(0,0,0,.7);
+	width: 100px;
+	height: 50px;
+	}
+		.add-partes {
+			position: relative;
+			top: 5px;
+			left: 10px;
+			}
+		.add-instrumentos {
+			position: relative;
+			top: 5px;
+			left: 5px;
+			}
+}
+.teste-td {}
+.partes-box {
+	position: absolute;
+	box-sizing: border-box;
+	top: 55px;
+	left: 108px;
+	padding: 0px;
+	margin: 0px;
+	height: 50px;
+	width: 527px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	}
+		.partes-table {
+			border-spacing: 2px 0px;
+			}
+		.partes-li {
+			position: relative;
+			box-sizing: border-box;
+			height: 50px;
+			width: 120px;
+			font-family: century gothic, sans-serif;
+			font-size: 16pt;
+			text-transform: capitalize;
+			text-align: center;
+			background-color: rgba(0,0,0,.5);
+			color: white;
+			border: none;
+			}
+
+/* POSICIONAMENTO TRACKS TELA PROJETO */
+.instrumentos-box {
+	position: absolute;
+	box-sizing: border-box;
+	top: 108px;
+	left: 5px;
+	padding: 0px 5px 0px 0px;
+	height: 247px;
+	width: 100px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	}
+	.instrumento-lista {
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+	}
+	.instrumento {
+		box-sizing: border-box;
+		margin: 0px 0px 2px 0px;
+		padding: 0px 0px 0px 5px;
+		width: 100px;
+		height: 60px;
+		font-family: century gothic, sans-serif;
+		font-size: 16pt;
+		text-transform: capitalize;
+		background-color: rgba(0,0,0,.4);
+		color: white;
+		border: none;
+		}
+
+.teste-img {
+	position: relative;
+	left: 10px;
+	border: 1px solid blue;
+}
+
+
+.tracks-box {
+	position: absolute;
+	top: 108px;
+	left: 108px;
+	box-sizing: border-box;
+	height: 247px;
+	width: 527px;
+	overflow: auto;
+	}
+	.tracks-botao {
+		position: relative;
+		top: 50px;
+		left: 150px;
+	}
+	.tracks-table {
+		border-collapse: separate;
+		border-spacing: 4px 2px;
+	}
+	.tracks-tr {
+		position: relative;
+		box-sizing: border-box;
+		top: 5px;
+		left: 45px;
+	}
+	.tdy {
+		border-top: : 0px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		border-left: 0px solid transparent;
+		padding: 0px;
+		box-sizing: border-box;
+		width: 120px;
+		height: 60px;
+		min-width: 120px;
+		min-height: 60px;
+		max-width: 120px;
+		max-height: 60px;
+		background-color: rgba(0,0,0,.5);	
+		overflow-x: auto;
+		overflow-y: auto;
+	}
+
+
+
+
+
+/* ---------- TELA PLACO ---------- */
+.palco-box {
+	display: none;
+}
+/* NOME DA MÚSICA MENU PALCO */
+h1#titulo-musica-palco {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	box-sizing: border-box;
+	height: 50px;
+	width: 640px;
+	background-color: rgba(0,0,0,.9);
+	border: none;
+	text-transform: uppercase;
+	color: white;
+	padding: 5px 5px 5px 5px;
+	font-size: 22pt;
+	font-family: century gothic, sans-serif;
+	text-align: center;
+	z-index: 1;
+}
+/* PARTES DA MÚSICA MENU PALCO */
+
+.partes-palco-box {
+	position: absolute;
+	box-sizing: border-box;
+	top: 60px;
+	left: 20px;
+	padding: 0px;
+	height: 100px;
+	width: 600px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	color: white;
+	/*white-space: nowrap;*/
+	}
+	.li-parte-box {
+		display: inline-block;
+		position: relative;
+		box-sizing: border-box;
+		top: 0px;
+		left: 30px;
+		margin-right: 5px;
+		}
+	.li-parte {
+		position: relative;
+		box-sizing: border-box;
+		height: 50px;
+		width: 130px;
+		margin-bottom: 3px;
+		font-family: century gothic, sans-serif;
+		font-size: 16pt;
+		text-transform: capitalize;
+		text-align: center;
+		background-color: rgba(0,0,0,.5);
+		color: white;
+		border: none;
+			
+		}
+
+.progresso-box {
+	position: absolute;
+	box-sizing: border-box;
+	top: 170px;
+	left: 40px;
+	padding: 5px;
+	height: 20px;
+	width: 560px;
+	background-color: rgba(0,0,0,.4);
+	color: white;
+}
+
+.volumes-box {
+	position: absolute;
+	box-sizing: border-box;
+	top: 200px;
+	left: 5px;
+	padding: 5px auto 5px 10px;
+	height: 160px;
+	width: 540px;
+	overflow-x: auto;
+	overflow-y: auto;
+	background-color: rgba(0,0,0,.0);
+	color: white;
+	white-space: nowrap;
+	}
+	.volume-individual-box {
+		display: inline-block;
+		position: relative;
+		box-sizing: border-box;
+		top: 0px;
+		left: 0px;
+		height: 150px;
+		width: 90px;
+		margin-right: 5px;
+		background: rgb(0,0,0);
+		}
+	.volume-individual-texto {
+		position: relative;
+		box-sizing: border-box;
+		top: 130px;
+		width: 90px;
+		margin: 0px;
+		text-transform: uppercase;
+		color: white;
+		font-size: 12pt;
+		font-family: century gothic, sans-serif;
+		text-align: center;
+		border: none;
+		background: rgb(0,0,0);
+		}
+
+.volume-geral-box {
+	position: absolute;
+	box-sizing: border-box;
+	top: 200px;
+	left: 550px;
+	padding: 5px;
+	height: 155px;
+	width: 85px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,.9);
+	color: white;
+	}
+
+
+
+
+
+
+
+
+
+.teste-div {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	height: 300px;
+	width: 580px;
+	overflow: auto;
+	border: 2px dashed yellow;
+}
+.teste-tabela {
+	border-collapse: separate;
+	border-spacing: 10px 2px;
+}
+.teste-tr {
+
+}
+.teste-td {
+	box-sizing: border-box;
+	height: 200px;
+	width: 150px;
+	min-height: 200px;
+	min-width: 150px;
+	max-height: 200px;
+	max-width: 150px;
+	border: 1px solid red;
+
+}
+.teste-img {
+	position: relative;
+	left: 10px;
+	border: 1px solid blue;
+}
