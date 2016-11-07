@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Teste Howler</title>
+    <script src="scripts/howler.js"></script>
+    <script>
+        function tocar() {
+            var sound = new Howl({
+                src: ['sample.mp3'],
+                autoplay: true,
+                loop: true,
+                volume: 0.8,
+            });
+
+            sound.play();
+        }
+        alert("Rodou");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

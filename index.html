@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <title>LoopControl - Página Inicial</title>
+</head>
+<body>
+    <script src="cordova.js"></script>
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/funcoes.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    
+    <!-- **********************TELA INICIAL********************** -->
+
+    <div class="menu-inicial-box">
+        <figure class="novo">
+            <a href="projeto.html"><img src="images/novo.png" alt="Novo" /></a>
+            <figcaption class="legenda">NOVO</figcaption>
+        </figure>
+        <figure class="playlist">
+            <a href="audio.html"><img src="images/playlist.png" alt="Playlist" /></a>
+            <figcaption class="legenda">PLAYLIST</figcaption>
+        </figure>
+        <figure class="abrir">
+            <a href="abrir.html"><img src="images/abrir.png" alt="Abrir" /></a>
+            <figcaption class="legenda">ABRIR</figcaption>
+        </figure>
+        <figure class="sair">
+            <img src="images/sair.png" alt="Sair" onclick="sairApp()" />
+            <figcaption class="legenda">SAIR</figcaption>
+        </figure>
+    </div>
+</body>
+</html>

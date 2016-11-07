@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title>LoopControl</title>
+    <link rel="stylesheet" href="./css/estilo.css"/>
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+</head>
+<body>
+<!-- DEFINIÇÕES INICIAIS // CARREGAR SCRIPTS -->
+    <script src="cordova.js"></script>
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/funcoes.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+<!-- **********************TELA PROJETO********************** -->
+<div class="projeto-box">
+	<div class="cabecalho-box">
+		<img src="images/salvar.png" alt="Salvar" class="icone-esq1" id="salvar" />
+		<img src="images/palco.png" alt="Palco" class="icone-esq2" id="palco" />
+		<input type="text" class="titulo-musica-projeto" placeholder="Título Música">
+		<a href="index.html"><img src="images/inicio.png" alt="Inicio" class="icone-dir1" id="inicio"/></a>
+		<img src="images/sair.png" alt="Sair" class="icone-dir2" id="sair" onclick="sairApp()" />
+	</div>
+	<div class="botoes-box">
+		<img src="images/flecha-baixo.png" class="add-instrumentos"/>
+		<img src="images/flecha-direita.png" class="add-partes"/>
+	</div>
+	<div class="partes-box">
+		<table class="partes-table">
+			<tr class="partes-lista">
+                <!-- FUNÇÃO QUE INSERE AS PARTES DA MÚSICA -->
+            </tr>
+		</table>
+	</div>
+	<div class="instrumentos-box">
+		<ul class="instrumento-lista">
+			<!-- FUNÇÃO QUE INSERE OS INSTRUMENTOS DA MÚSICA -->
+		</ul>
+	</div> 
+	<div class="tracks-box">
+		<img src="images/novo.png" class="tracks-botao" onclick="f()"/>
+		<!-- FUNÇÃO QUE INSERE AS TRACKS DA MÚSICA -->
+	</div>
+</div>
+
+
+<!-- **********************TELA PALCO********************** -->
+<div class="palco-box">
+	<div class="cabecalho-box">
+		<a href="index.html"><img src="images/inicio.png" alt="Inicio" class="icone-esq1" id="inicio2"/></a>
+		<img src="images/projeto.png" alt="Projeto" class="icone-esq2" id="projeto"/>
+		<input type="text" class="titulo-musica-palco" placeholder="Título Música" readonly/>
+		<img src="images/anterior.png" alt="Anterior" class="icone-dir1" id="anterior"/>
+		<img src="images/proximo.png" alt="Próximo" class="icone-dir2" id="proximo"/>
+	</div>
+	<div class="partes-palco-box">
+		
+	</div>
+	<div class="progresso-box">
+		BARRA DE PROGRESSO
+	</div>
+	<div class="volumes-box">
+		
+	</div>
+	<div class="volume-geral-box">
+		GERAL
+	</div>
+	<script>
+		window.requestFileSystem(window.TEMPORARY, 1024*1024, function(fs) {
+  fs.root.getDirectory('LoopControl', {create: true}, function(dirEntry) {
+    ...
+  }, errorHandler);
+}, errorHandler);
+	</script>
+</div>
+</body>
+</html>
