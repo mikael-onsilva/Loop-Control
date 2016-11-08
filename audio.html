@@ -1,23 +1,151 @@
-﻿<!DOCTYPE html>
-<html lang="pt-br">
+﻿<html>
 <head>
-    <title>Teste Howler</title>
-    <script src="scripts/howler.js"></script>
-    <script>
-        function tocar() {
-            var sound = new Howl({
-                src: ['sample.mp3'],
-                autoplay: true,
-                loop: true,
-                volume: 0.8,
-            });
+    <title>Media Example</title>
 
-            sound.play();
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+    <script src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        // Wait for device API libraries to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, createDirectory, fail);
         }
-        alert("Rodou");
+
+        // Audio player
+        //
+        var my_media = null;
+        var mediaTimer = null;
+
+        // Play audio
+        //
+        function playAudio(src) {
+            if (my_media == null) {
+                // Create Media object from src
+                my_media = new Media(src, onSuccess, onError);
+            } // else play current audio
+            // Play audio
+            my_media.play();
+
+            // Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                                setAudioPosition((position) + " sec");
+                            }
+                        },
+                        // error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            setAudioPosition("Error: " + e);
+                        }
+                    );
+                }, 1000);
+            }
+        }
+
+        // Pause audio
+        //
+        function pauseAudio() {
+            if (my_media) {
+                my_media.pause();
+            }
+        }
+
+        // Stop audio
+        //
+        function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
+
+        // onSuccess Callback
+        //
+        function onSuccess() {
+            console.log("playAudio():Audio Success");
+        }
+
+        // onError Callback
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                  'message: ' + error.message + '\n');
+        }
+
+        // Set audio position
+        //
+        function setAudioPosition(position) {
+            document.getElementById('audio_position').innerHTML = position;
+        }
+
+    
+        //
+        //
+        //
+    function createDirectory(externalRootDirectory) {
+	    externalRootDirectory.getDirectory('LoopControl', { create: true }, function (dirEntry) {
+	        dirEntry.getDirectory('Music', { create: true }, function (subDirEntry) {
+
+	            createFile(subDirEntry, "fileInNewSubDir.txt");
+
+	        }, onErrorGetDir);
+	    }, onErrorGetDir);
+	}
+
+    function fail(error) {
+        console.log(error.code);
+    }
+    
+    function first(value) {
+        switch (value) {
+            case 1:
+                alert(cordova.file.applicationDirectory);
+                break;
+            case 2:
+                alert(cordova.file.applicationStorageDirectory);
+                break;
+            case 3:
+                alert(cordova.file.cacheDirectory);
+                break;
+            case 4:
+                alert(cordova.file.dataDirectory);
+                break;
+            case 5:
+                alert(cordova.file.externalRootDirectory);
+                break;
+            case 6:
+                alert(cordova.file.externalApplicationStorageDirectory);
+                break;
+            case 7:
+                alert(cordova.file.externalDataDirectory);
+                break;
+        }
+    }
     </script>
 </head>
 <body>
-
+    <p><button onclick="playAudio('/storage/emulated/0/music/corrida/11.mp3')">Play</button></p>
+    <p><button onclick="pauseAudio()">Pause</button></p>
+    <p><button onclick="stopAudio()">Stop</button></p>
+    <p id="audio_position"></p>
+    <p><button onclick="first(1)">applicationDirectory</button></p>
+    <p><button onclick="first(2)" >applicationStorageDirectory</button></p>
+    <p><button onclick="first(3)" >cacheDirectory</button></p>
+    <p><button onclick="first(4)" >dataDirectory</button></p>
+    <p><button onclick="first(5)" >externalRootDirectory</button></p>
+    <p><button onclick="first(6)" >externalApplicationStorageDirectory</button></p>
+    <p><button onclick="first(7)" >externalDataDirectory</button></p>
 </body>
 </html>
